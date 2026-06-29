@@ -1,0 +1,195 @@
+
+import streamlit as st # type: ignore
+import time
+
+st.set_page_config(
+    page_title="HELLO ANH- Mặt trời nhỏ của emm !!",
+    page_icon="❤️",
+)
+
+# =========================
+# Session State
+# =========================
+if "page" not in st.session_state:
+    st.session_state.page = 0
+
+# =========================
+# PAGE 0
+# =========================
+
+if st.session_state.page == 0:
+
+    st.title("HELLO ANH- Mặt trời nhỏ của emm !!")
+
+    st.write("")
+
+    st.markdown("""
+# ⚠️ Hệ thống phát hiện một người đẹp trai (chắc thế) đang truy cập.
+
+Muốn gặp chủ nhân của trang web...
+
+👉 Anh phải vượt qua **3 thử thách**.
+
+Có chắc chắn muốn tiếp tục không? 😏
+""")
+
+    if st.button("Bắt đầu"):
+        st.session_state.page = 1
+        st.rerun()
+
+# =========================
+# PAGE 1
+# =========================
+
+elif st.session_state.page == 1:
+
+    st.header("Level 1")
+
+    st.subheader("Anh có nhớ em không? 🥺")
+
+    answer = st.radio(
+        "",
+        (
+            "🙄 Không",
+            "🤔 Bình thường",
+            "🥹 Nhớ muốn chết"
+        )
+    )
+
+    if st.button("Xác nhận"):
+
+        if answer == "🙄 Không":
+            st.error("❌ Sai rồi.\n\nHệ thống nghi ngờ anh trả lời tào lao và khùng điên 😡")
+
+        elif answer == "🤔 Bình thường":
+            st.warning("🤨 Bình thường hả? cức ấy\n\nChọn lại đê.")
+
+        else:
+            st.success("✅Giờ mới trả lời đúng????, phải đến lần thứ 3 anh mới chọn cái này hả??????")
+            time.sleep(5)
+            st.session_state.page = 2
+            st.rerun()
+
+# =========================
+# PAGE 2
+# =========================
+
+elif st.session_state.page == 2:
+
+    st.header("Level 2")
+
+    mood = st.selectbox(
+        "Hôm nay anh thấy thế nào?",
+        (
+            "😊 Vui",
+            "😴 Mệt",
+            "😔 Buồn",
+            "🥹 Nhớ em (anh phải chọn cái này)"
+        )
+    )
+
+    if st.button("Tiếp tục ❤️"):
+
+        if mood == "😊 Vui":
+            st.success("Ok vui rồi, tày ròi tại sao không chọn nhớ em??? ")
+
+        elif mood == "😴 Mệt":
+            st.info("🤍 Riêng anh k được mệt, mệt là mệt thế nào được. Mệt thì ôm bé cái nh. NHƯNG tại sao không chọn nhớ em 🥰")
+
+        elif mood == "😔 Buồn":
+            st.warning("Hâhhahahhaahhaaha.\n\nXa con này 1 tí là lại buồn ngay. NHƯNG tại sao không chọn nhớ em đm ❤️")
+
+        else:
+            st.success("🥹 Ỏ thanks, e thì bình thường lew lew")
+
+        time.sleep(5)
+
+        st.session_state.page = 3
+        st.rerun()
+
+# =========================
+# PAGE 3
+# =========================
+
+elif st.session_state.page == 3:
+
+    st.header("Last question 😎")
+
+    st.subheader(" Ánh có xinh đẹp tuyệt vời không?")
+
+    beauty = st.radio(
+        "",
+        (
+            "🙄 Không",
+            "🙂 Cũng được",
+            "👑 Đẹp nhất thế giới"
+        )
+    )
+
+    if st.button("Trả lời"):
+
+        if beauty == "🙄 Không":
+            st.error("🚨 ??? KHÔNG LÀ KHÔNG THẾ NÀO.\n\n Có mắt nhìn người k, có biết nhìn k?? 😡")
+
+        elif beauty == "🙂 Cũng được":
+            st.warning("🙂 Anh còn một cơ hội cuối cùng, chọn cho nó hẳn hoi???")
+
+        else:
+            st.success("🥰 Bộ khen em xinh khó lắm hả?? Giận rồi, yêu cầu mua 1 ly matcha để em hết giận ")
+            time.sleep(5)
+            st.session_state.page = 4
+            st.rerun()
+
+# =========================
+# PAGE 4
+# =========================
+
+elif st.session_state.page == 4:
+
+    st.balloons()
+
+    st.title("🎉 THÔI THÌ CHÚC MỪNG 🎉")
+
+    st.success("Anh đã có cơ hội mua trà sữa cho em sau khi vượt qua các thử thách diệu kỳ ❤️")
+
+    st.markdown("---")
+
+    st.header("💌 Phần thưởng của anh nhé, sến thì cũng ráng mà đọc")
+
+    st.write("""
+
+## Gửi anh...
+Cảm ơn anh vì đã biến một ngày quan trọng của em thành một kỉ niệm đẹp :33. Em rất vui và trân trọng khi anh đã dành thời gian để dậy sớm với em này, để ý và chăm sóc em nàyy. Em biết anh không có nghĩa vụ phải làm những điều đó nhưng anh vẫn làm vì iuu em. Tôi vuii lắm ạ !
+             
+Em Ánh cảm ơn hihi
+
+
+❤️
+
+I love you!!!
+
+""")
+
+    st.image("us.jpg.jpg", width=500)
+
+    st.balloons()
+
+    st.markdown("---")
+
+    if st.button("🤗 Bấm để được nhận quà"):
+
+        st.success("Đã gửi 999 cái ôm ❤️")
+
+    if st.button("💋 Muốn nhận quà nữa không?"):
+
+        progress = st.progress(0)
+
+        for i in range(100):
+            time.sleep(0.02)
+            progress.progress(i + 1)
+
+        st.success("😘 Quà của anh là mua 1 ly trà sữa cho em.")
+
+    if st.button("🙈 Đừng bấm vào đây"):
+
+        st.info("🤭 Em biết ngay anh sẽ bấm mà.\n\n Con này nói không bao giờ chịu nghe cái j, cứ lì lì:((( )))")
