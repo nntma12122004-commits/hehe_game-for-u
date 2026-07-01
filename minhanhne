@@ -94,10 +94,10 @@ elif st.session_state.page == 2:
             st.success("Ok vui rồi, tày ròi tại sao không chọn nhớ em??? ")
 
         elif mood == "😴 Mệt":
-            st.info("🤍 Riêng anh k được mệt, mệt là mệt thế nào được. Mệt thì ôm bé cái nh. NHƯNG tại sao không chọn nhớ em 🥰")
+            st.info("🤍 Riêng anh k được mệt, mệt là mệt thế nào được. Mệt thì ôm bé cái nh. NHƯNG tại sao không chọn nhớ em🥰")
 
         elif mood == "😔 Buồn":
-            st.warning("Hâhhahahhaahhaaha.\n\nXa con này 1 tí là lại buồn ngay. NHƯNG tại sao không chọn nhớ em đm ❤️")
+            st.warning("Hâhhahahhaahhaaha.\n\nXa con này 1 tí là lại buồn ngay. NHƯNG tại sao không chọn nhớ em ❤️")
 
         else:
             st.success("🥹 Ỏ thanks, e thì bình thường lew lew")
@@ -154,7 +154,7 @@ elif st.session_state.page == 4:
 
     st.markdown("---")
 
-    st.header("💌 Phần thưởng của anh nhé, sến thì cũng ráng mà đọc đm")
+    st.header("💌 Phần thưởng của anh nhé,đọc đi =)))")
 
     st.write("""
 
@@ -188,7 +188,7 @@ I love you!!!
             time.sleep(0.02)
             progress.progress(i + 1)
 
-        st.success("😘 Quà của anh là mua 1 ly trà sữa cho em Nhung.")
+        st.success("😘 Quà của anh là mua 1 ly trà sữa cho em.")
 
     if st.button("🙈 Đừng bấm vào đây"):
 
